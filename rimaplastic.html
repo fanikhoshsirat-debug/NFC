@@ -236,6 +236,20 @@ h2{
 
     <div class="person-group">
         <div class="person-title">
+            <span>مسعود راسخ عزم</span>
+            <span>مدیر فروش</span>
+        </div>
+        <div class="mobile-line">
+            <span>موبایل:</span>
+            <div class="mobile-info">
+                <a href="tel:+989122181867" class="ltr-text mobile-number">0912 218 1867</a>
+                <button class="save-individual-btn" data-person="masoudRasekhAzm"></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="person-group">
+        <div class="person-title">
             <span>علی فرجی</span>
             <span>مدیر عامل</span>
         </div>
@@ -276,20 +290,6 @@ h2{
 
     <div class="person-group">
         <div class="person-title">
-            <span>آقا یاسین دیزآبادی</span>
-            <span>-</span>
-        </div>
-        <div class="mobile-line">
-            <span>موبایل:</span>
-            <div class="mobile-info">
-                <a href="tel:+989024444639" class="ltr-text mobile-number">0902 444 4639</a>
-                <button class="save-individual-btn" data-person="yasinDizabadi"></button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="person-group">
-        <div class="person-title">
             <span>محمدرضا خدابنده</span>
             <span>مدیر تولید</span>
         </div>
@@ -304,14 +304,14 @@ h2{
     
     <div class="person-group">
         <div class="person-title">
-            <span>مسعود راسخ عزم</span>
-            <span>مدیر فروش</span>
+            <span>آقا یاسین دیزآبادی</span>
+            <span>-</span>
         </div>
         <div class="mobile-line">
             <span>موبایل:</span>
             <div class="mobile-info">
-                <a href="tel:+989122181867" class="ltr-text mobile-number">0912 218 1867</a>
-                <button class="save-individual-btn" data-person="masoudRasekhAzm"></button>
+                <a href="tel:+989024444639" class="ltr-text mobile-number">0902 444 4639</a>
+                <button class="save-individual-btn" data-person="yasinDizabadi"></button>
             </div>
         </div>
     </div>
@@ -331,13 +331,13 @@ const companyInfo = {
 
 // داده‌های هر فرد
 const contactsData = {
-    aliFaraji1: { // Renamed for clarity, since there are two Ali Farajis in the original data
+    aliFaraji1: { 
         N: 'فرجی;علی;;;',
         FN: 'علی فرجی - مدیر عامل ریما پلاستیک',
         TITLE: 'مدیر عامل',
         TEL: '+989122012562',
-        TEL2: '+989353822777', // Added second mobile number
-        EMAIL: 'F7610F@gmail.com', // Specific email for Ali Faraji
+        TEL2: '+989353822777', 
+        EMAIL: 'F7610F@gmail.com', 
         filename: 'AliFaraji_CEO_RimaPlastic.vcf'
     },
     alirezaFaraji: {
@@ -351,7 +351,7 @@ const contactsData = {
     yasinDizabadi: {
         N: 'دیزآبادی;یاسین;;;',
         FN: 'آقا یاسین دیزآبادی - ریما پلاستیک',
-        TITLE: '', // No specific title provided
+        TITLE: '', 
         TEL: '+989024444639',
         filename: 'YasinDizabadi_RimaPlastic.vcf'
     },
@@ -425,11 +425,11 @@ document.querySelectorAll('.save-individual-btn').forEach(button => {
     });
 });
 
-// **کد ذخیره همه (باقی می‌ماند):**
+// **کد ذخیره همه:**
 document.getElementById('saveAllBtn').addEventListener('click', () => {
     let vcardAllContent = "";
-    // Ensure the order of contacts in the generated VCF matches the display order
-    const orderedKeys = ['aliFaraji1', 'alirezaFaraji', 'yasinDizabadi', 'mohammadrezaKhodabande', 'masoudRasekhAzm'];
+    // *** ترتیب جدید ذخیره سازی بر اساس ترتیب نمایشی درخواستی ***
+    const orderedKeys = ['masoudRasekhAzm', 'aliFaraji1', 'alirezaFaraji', 'mohammadrezaKhodabande', 'yasinDizabadi'];
 
     orderedKeys.forEach(key => {
         const data = contactsData[key];
