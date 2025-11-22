@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فروشگاه رایان پخش | مسعود همتی</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* --- تنظیمات رنگی جدید (سبز تیره و سفید شیری) --- */
+:root {
+    --primary-green: #155d27; /* سبز تیره اصلی (جنگلی) */
+    --hover-green: #1e8436; /* سبز کمی روشن‌تر برای هاور */
+    --deep-text-green: #0a2912; /* سبز خیلی تیره (نزدیک به مشکی) برای متون اصلی */
+    --milky-card-bg: #FFFCE0; /* سفید شیری/کرمی برای پس‌زمینه کارت */
+    --milky-body-bg: #F5F5DC; /* سفید شیری تیره‌تر برای پس‌زمینه کل صفحه */
+    --text-light: #FAFAFA; /* رنگ روشن برای متون روی پس‌زمینه سبز */
+}
+
+body{
+    margin:0;
+    padding:0;
+    background: var(--milky-body-bg);
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: ltr;
+    text-align: left;
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:400px;
+    background: var(--milky-card-bg);
+    border-radius:25px;
+    padding:30px 25px;
+    box-shadow:0 15px 40px rgba(21, 93, 39, 0.15); /* سایه سبز ملایم */
+    border: 2px solid var(--primary-green);
+    text-align: left;
+}
+/* عنوان فارسی */
+h1{
+    margin:0 0 15px;
+    font-size:28px;
+    color: var(--deep-text-green);
+    text-align: center;
+    font-weight: 900;
+    direction: rtl;
+}
+
+/* کادر اطلاعات عمومی (آدرس و تلفن ثابت) */
+.general-info {
+    padding: 20px 15px;
+    background: var(--primary-green); /* پس زمینه سبز تیره */
+    border-radius: 15px;
+    margin-bottom: 25px;
+    color: var(--text-light);
+    direction: rtl;
+    text-align: right;
+    border: 1px solid var(--hover-green);
+}
+.general-info strong {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--milky-card-bg); /* تیتر کرمی رنگ روی پس زمینه سبز */
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 252, 224, 0.3);
+    padding-bottom: 10px;
+}
+.contact-item {
+    padding: 8px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 1px dashed rgba(255, 252, 224, 0.3); /* خط چین روشن */
+}
+.contact-item:last-child {
+    border-bottom: none;
+}
+.tel-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #e0e0e0;
+    min-width: 70px;
+}
+.contact-content {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+.contact-content a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    direction: ltr;
+    display: inline-block;
+}
+
+/* دکمه‌های شبکه اجتماعی */
+.links{
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+}
+.links a{
+    padding:12px 25px;
+    font-size:15px;
+    border-radius:12px;
+    text-decoration:none;
+    color:var(--text-light);
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+/* دکمه اینستاگرام - گرادینت خودش را حفظ کردیم تا زیباتر باشد */
+.insta-btn {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    /* اگر میخواهید دکمه اینستاگرام هم سبز شود، خط بالا را حذف و خط زیر را فعال کنید */
+    /* background: var(--hover-green); */
+}
+.links a:hover{opacity: 0.9; transform: translateY(-2px);}
+
+
+/* بخش تماس فردی */
+.person-group {
+    border: 2px solid #e6e6e6;
+    border-radius: 15px;
+    padding: 20px 15px;
+    margin-bottom: 15px;
+    background: #ffffff; /* پس زمینه سفید خالص برای تمایز از کارت شیری */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+.person-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--deep-text-green);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    border-bottom: 2px solid var(--primary-green);
+}
+.person-title span:first-child {
+    color: var(--deep-text-green);
+}
+.person-title span:last-child {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 14px;
+    background: var(--primary-green); /* پس زمینه سبز برای لیبل سمت */
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.mobile-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    direction: rtl;
+}
+.mobile-line > span {
+    font-size: 14px;
+    color: #555; /* رنگ خاکستری ملایم برای لیبل‌ها */
+    font-weight: 500;
+}
+.mobile-info {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+}
+.ltr-text {
+    direction: ltr;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.mobile-number {
+    font-size: 17px;
+    color: var(--deep-text-green);
+    margin-left: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.save-individual-btn {
+    background: var(--primary-green);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.save-individual-btn:hover {
+    background: var(--hover-green);
+}
+.save-individual-btn::before {
+    content: "ذخیره مخاطب 💾";
+    margin-left: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>فروشگاه رایان پخش</h1>
+    
+    <div class="general-info">
+        <strong>اطلاعات فروشگاه</strong>
+        
+        <div class="contact-item">
+            <span class="tel-label">تلفن دفتر:</span>
+            <div class="contact-content">
+                <a href="tel:+982188048770">021 8804 8770</a><br>
+                <a href="tel:+982188059687">021 8805 9687</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <span class="tel-label">آدرس:</span>
+            <span class="contact-content">تهران، ونک، ملاصدرا، خیابان شیرازی جنوبی، کوچه لاله، پلاک ۲۵، پاساژ بهنام، واحد ۱۳ همکف</span>
+        </div>
+        
+        <div class="links">
+            <a href="https://instagram.com/raayan.pakhsh" target="_blank" class="insta-btn">
+                <span>raayan.pakhsh</span>
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="20" height="20" alt="Instagram" style="filter: brightness(0) invert(1);">
+            </a>
+        </div>
+    </div>
+
+    <div class="person-group">
+        <div class="person-title">
+            <span>مسعود همتی</span>
+            <span>مدیریت</span>
+        </div>
+        
+        <div class="mobile-line">
+            <span>موبایل:</span>
+            <div class="mobile-info">
+                <a href="tel:+989120306276" class="ltr-text mobile-number">0912 030 6276</a>
+            </div>
+        </div>
+
+        <div class="mobile-line">
+            <span>موبایل دوم:</span>
+            <div class="mobile-info">
+                <a href="tel:+989190357545" class="ltr-text mobile-number">0919 035 7545</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px;">
+             <button class="save-individual-btn" data-person="masoudHemmati"></button>
+        </div>
+
+    </div>
+    
+</div>
+
+<script>
+// اطلاعات شرکت
+const companyInfo = {
+    ORG: 'فروشگاه رایان پخش',
+    ADDRESS: 'تهران، ونک، ملاصدرا، خیابان شیرازی جنوبی، کوچه لاله، پلاک ۲۵، پاساژ بهنام، واحد ۱۳ همکف',
+    INSTAGRAM_URL: 'https://instagram.com/raayan.pakhsh',
+    TEL_WORK1: '+982188048770',
+    TEL_WORK2: '+982188059687'
+};
+
+// اطلاعات فرد
+const contactsData = {
+    masoudHemmati: {
+        N: 'همتی;مسعود;;;',
+        FN: 'مسعود همتی - رایان پخش',
+        TITLE: 'مدیریت',
+        TEL_CELL1: '+989120306276',
+        TEL_CELL2: '+989190357545',
+        filename: 'MasoudHemmati_RayanPakhsh.vcf'
+    }
+};
+
+function downloadVcf(personKey) {
+    const data = contactsData[personKey];
+    const company = companyInfo;
+    
+    let vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${data.N}
+FN:${data.FN}
+ORG:${company.ORG}`;
+
+    if (data.TITLE) {
+        vcard += `\nTITLE:${data.TITLE}`;
+    }
+
+    // شماره‌های موبایل
+    if (data.TEL_CELL1) vcard += `\nTEL;TYPE=CELL;TYPE=PREF:${data.TEL_CELL1}`;
+    if (data.TEL_CELL2) vcard += `\nTEL;TYPE=CELL:${data.TEL_CELL2}`;
+
+    // تلفن‌های ثابت فروشگاه
+    if (company.TEL_WORK1) vcard += `\nTEL;TYPE=WORK,VOICE:${company.TEL_WORK1}`;
+    if (company.TEL_WORK2) vcard += `\nTEL;TYPE=WORK,VOICE:${company.TEL_WORK2}`;
+
+    // آدرس
+    if (company.ADDRESS) {
+        vcard += `\nADR;TYPE=WORK:;;${company.ADDRESS};تهران;;;`;
+    }
+    
+    // اینستاگرام
+    if (company.INSTAGRAM_URL) {
+        vcard += `\nURL;TYPE=INSTAGRAM:${company.INSTAGRAM_URL}`;
+    }
+
+    vcard += `\nEND:VCARD`;
+
+    const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = data.filename;
+    document.body.appendChild(a);
+    a.click();
+    
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+    }, 500);
+}
+
+document.querySelector('.save-individual-btn').addEventListener('click', (e) => {
+    const personKey = e.currentTarget.getAttribute('data-person');
+    if (personKey) {
+        downloadVcf(personKey);
+    }
+});
+</script>
+
+</body>
+</html>
