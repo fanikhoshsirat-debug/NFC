@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کارت ویزیت | امیرسامان جعفری</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* --- پالت رنگی --- */
+:root {
+    --primary-green: #006400;    /* سبز خیلی تیره و پررنگ */
+    --accent-orange: #FF6600;    /* نارنجی پررنگ برای المان‌ها */
+    --bg-milky: #FFFCE0;         /* رنگ شیری برای پس‌زمینه کارت */
+    --bg-page: #FF8C00;          /* رنگ نارنجی برای کل صفحه (تغییر جدید) */
+    --text-dark: #1a1a1a;        /* رنگ متن تیره */
+    --text-light: #ffffff;       /* رنگ متن سفید */
+}
+
+body {
+    margin: 0;
+    padding: 20px; /* اضافه کردن کمی فاصله از اطراف در موبایل */
+    background: var(--bg-page); /* اعمال رنگ نارنجی به پس‌زمینه کل */
+    font-family: 'Vazirmatn', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    direction: rtl;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    background: var(--bg-milky);
+    border-radius: 25px; /* گردی بیشتر گوشه‌ها */
+    padding: 35px 25px;
+    /* سایه قوی‌تر برای جدا شدن از پس‌زمینه نارنجی */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--primary-green);
+    text-align: right;
+}
+
+/* عنوان مجموعه */
+h1 {
+    margin: 0 0 25px;
+    font-size: 24px;
+    color: var(--primary-green);
+    text-align: center;
+    font-weight: 900;
+    border-bottom: 3px solid var(--accent-orange);
+    padding-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* استایل بخش مشخصات فردی */
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* استایل جدید برای بزرگنمایی نام */
+.name {
+    font-size: 34px; /* افزایش چشمگیر سایز فونت */
+    font-weight: 900; /* بولدتر شدن */
+    color: var(--text-dark);
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    /* افزودن سایه ملایم برای برجستگی بیشتر */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.job-title {
+    background: var(--accent-orange);
+    color: var(--text-light);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+}
+
+/* شماره موبایل */
+.phone-box {
+    background: #fff;
+    border: 2px dashed var(--primary-green);
+    border-radius: 15px;
+    padding: 18px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.phone-label {
+    font-weight: bold;
+    color: var(--primary-green);
+    font-size: 15px;
+}
+.phone-number {
+    direction: ltr;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+/* دکمه‌های شبکه‌های اجتماعی */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* انیمیشن نرم‌تر */
+    font-size: 16px;
+}
+
+.social-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.social-btn img {
+    filter: brightness(0) invert(1);
+    margin-left: 12px;
+    width: 26px;
+    height: 26px;
+}
+
+.social-text {
+    font-family: sans-serif;
+    direction: ltr;
+    letter-spacing: 0.5px;
+}
+
+/* گرادینت‌ها */
+.bg-insta {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 5px 15px rgba(220, 39, 67, 0.3);
+}
+
+/* گرادینت تلگرام */
+.bg-telegram {
+    background: linear-gradient(45deg, #2AABEE 0%, #229ED9 100%);
+    box-shadow: 0 5px 15px rgba(42, 171, 238, 0.3);
+}
+
+/* گرادینت واتساپ */
+.bg-whatsapp {
+    background: linear-gradient(45deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* دکمه ذخیره مخاطب */
+.save-btn {
+    background: linear-gradient(90deg, var(--primary-green), #004d00);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 18px;
+    border-radius: 15px;
+    font-family: 'Vazirmatn';
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 8px 20px rgba(0, 100, 0, 0.25);
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.save-btn:hover {
+     transform: scale(1.03);
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>مجموعه چاپ خوش سیرت</h1>
+
+    <div class="profile-section">
+        <h2 class="name">امیرسامان جعفری</h2>
+        <span class="job-title">مسئول بخش خدمات فنی</span>
+    </div>
+
+    <div class="phone-box">
+        <span class="phone-label">شماره تماس:</span>
+        <a href="tel:+989376527737" class="phone-number">0937 652 7737</a>
+    </div>
+
+    <div class="social-links">
+        <a href="https://instagram.com/amir__saman_" target="_blank" class="social-btn bg-insta">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+            <span class="social-text">amir__saman_</span>
+        </a>
+
+        <a href="https://t.me/amirsamansj" target="_blank" class="social-btn bg-telegram">
+            <img src="https://cdn-icons-png.flaticon.com/512/1356/1356479.png" alt="Telegram Rocket">
+            <span class="social-text">@amirsamansj</span>
+        </a>
+
+        <a href="https://wa.me/989376527737" target="_blank" class="social-btn bg-whatsapp">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+            <span class="social-text">WhatsApp Contact</span>
+        </a>
+    </div>
+
+    <button class="save-btn" onclick="downloadVcf()">
+        <span>ذخیره مخاطب در تلفن</span>
+        <span>📲</span>
+    </button>
+</div>
+
+<script>
+function downloadVcf() {
+    // اطلاعات مخاطب
+    const person = {
+        firstName: "امیرسامان",
+        lastName: "جعفری",
+        // تغییر نام سازمان در فایل ذخیره
+        org: "مجموعه چاپ خوش سیرت",
+        title: "مسئول بخش خدمات فنی",
+        mobile: "+989376527737",
+        instagram: "https://instagram.com/amir__saman_",
+        telegram: "https://t.me/amirsamansj",
+        whatsapp: "https://wa.me/989376527737",
+        filename: "AmirSaman_Jafari_Chap.vcf"
+    };
+
+    // ساخت فایل VCF
+    let vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${person.lastName};${person.firstName};;;
+FN:${person.firstName} ${person.lastName}
+ORG:${person.org}
+TITLE:${person.title}
+TEL;TYPE=CELL;TYPE=PREF;TYPE=VOICE:${person.mobile}
+URL;TYPE=INSTAGRAM:${person.instagram}
+X-SOCIALPROFILE;TYPE=INSTAGRAM:${person.instagram}
+URL;TYPE=TELEGRAM:${person.telegram}
+X-SOCIALPROFILE;TYPE=TELEGRAM:${person.telegram}
+URL;TYPE=WHATSAPP:${person.whatsapp}
+END:VCARD`;
+
+    // فرآیند دانلود
+    const blob = new Blob([vcard], {type: 'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = person.filename;
+    document.body.appendChild(link);
+    link.click();
+    
+    setTimeout(() => {
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }, 1000);
+}
+</script>
+
+</body>
+</html>
