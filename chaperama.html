@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>چاپ طلایی راما | خدمات چاپ لیبل</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* --- تنظیمات رنگی جدید (مشکی، سفید، طلایی) --- */
+:root {
+    --primary-gold: #D4AF37; /* طلایی متالیک */
+    --dark-gold: #AA8C2C; /* طلایی تیره‌تر برای هاور */
+    --black: #222222; /* مشکی نرم */
+    --pure-black: #000000; /* مشکی خالص برای متون اصلی */
+    --white: #FFFFFF;
+    --bg-light: #f4f4f4; /* پس زمینه خاکستری خیلی روشن برای کنتراست */
+    --text-dark: #333;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background: var(--bg-light);
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: ltr;
+    text-align: left;
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:400px;
+    background: var(--white);
+    border-radius:25px;
+    padding:30px 25px;
+    box-shadow:0 15px 40px rgba(0, 0, 0, 0.15);
+    border: 2px solid var(--primary-gold); /* حاشیه طلایی */
+    text-align: left;
+}
+/* عنوان فارسی */
+h1{
+    margin:0 0 5px;
+    font-size:28px;
+    color: var(--pure-black);
+    text-align: center;
+    font-weight: 900;
+    direction: rtl;
+}
+/* زیرعنوان/خدمات */
+h2{
+    margin:0 0 25px;
+    font-size:15px;
+    color: var(--primary-gold);
+    font-weight: 600;
+    text-align: center;
+    direction: rtl;
+    line-height: 1.4;
+}
+
+/* کادر اطلاعات عمومی و آدرس */
+.general-info {
+    padding: 20px 15px;
+    background: var(--black); /* پس زمینه مشکی */
+    border-radius: 15px;
+    margin-bottom: 25px;
+    color: var(--white);
+    direction: rtl;
+    text-align: right;
+    border: 1px solid var(--primary-gold);
+}
+.general-info strong {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--primary-gold);
+    text-align: center;
+}
+.contact-item {
+    padding: 8px 0;
+    display: flex;
+    justify-content: flex-start; /* تغییر به شروع برای آدرس طولانی */
+    align-items: flex-start;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.5); /* خط جداکننده طلایی کمرنگ */
+}
+.contact-item:last-child {
+    border-bottom: none;
+}
+.tel-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccc;
+    min-width: 60px; /* عرض ثابت برای لیبل آدرس */
+}
+.address-text {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* لینک‌های شبکه‌های اجتماعی */
+.links{
+    display:flex; /* تغییر به فلکس برای تک دکمه */
+    justify-content: center;
+    margin-top:20px;
+}
+.links a{
+    padding:12px 25px;
+    font-size:15px;
+    border-radius:12px;
+    text-decoration:none;
+    color:var(--white);
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+/* استایل مخصوص دکمه اینستاگرام */
+.insta-btn {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+.links a:hover{opacity: 0.9; transform: translateY(-2px);}
+
+
+/* بخش تماس (فرد) */
+.person-group {
+    border: 2px solid #eee;
+    border-radius: 15px;
+    padding: 20px 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.person-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--pure-black);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    border-bottom: 2px solid var(--primary-gold);
+}
+.person-title span:first-child {
+    color: var(--black);
+}
+.person-title span:last-child {
+    font-weight: 600;
+    color: var(--primary-gold);
+    font-size: 14px;
+    background: var(--black);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* استایل شماره موبایل‌ها */
+.mobile-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    direction: rtl;
+}
+.mobile-line > span {
+    font-size: 14px;
+    color: #777;
+    font-weight: 500;
+}
+.mobile-info {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+}
+.ltr-text {
+    direction: ltr;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.mobile-number {
+    font-size: 17px;
+    color: var(--black);
+    margin-left: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* استایل دکمه ذخیره */
+.save-individual-btn {
+    background: var(--primary-gold);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+}
+.save-individual-btn:hover {
+    background: var(--dark-gold);
+    color: white;
+}
+.save-individual-btn::before {
+    content: "ذخیره مخاطب 💾";
+    margin-left: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>چاپ طلایی راما</h1>
+    <h2>چاپ لیبل پشت چسب دار و خدمات پس از چاپ لیبل چسبدار</h2>
+    
+    <div class="general-info">
+        <strong>اطلاعات تماس و آدرس</strong>
+        <div class="contact-item">
+            <span class="tel-label">آدرس:</span>
+            <span class="address-text">شهر قدس، خیابان ساحل، کوچه آیدین، پلاک 4</span>
+        </div>
+        
+        <div class="links">
+            <a href="https://instagram.com/print.raman" target="_blank" class="insta-btn">
+                <span>اینستاگرام</span>
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="20" height="20" alt="Instagram" style="filter: brightness(0) invert(1);">
+            </a>
+        </div>
+    </div>
+
+    <div class="person-group">
+        <div class="person-title">
+            <span>یوسف رحیمی</span>
+            <span>مدیریت</span>
+        </div>
+        
+        <div class="mobile-line">
+            <span>موبایل اصلی:</span>
+            <div class="mobile-info">
+                <a href="tel:+989126946341" class="ltr-text mobile-number">0912 694 6341</a>
+            </div>
+        </div>
+
+        <div class="mobile-line">
+            <span>شماره دوم:</span>
+            <div class="mobile-info">
+                <a href="tel:+989032795661" class="ltr-text mobile-number">0903 279 5661</a>
+            </div>
+        </div>
+        <div class="mobile-line">
+            <span>شماره سوم:</span>
+            <div class="mobile-info">
+                <a href="tel:+989354639797" class="ltr-text mobile-number">0935 463 9797</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; text-align: center;">
+             <button class="save-individual-btn" data-person="yousefRahimi" style="width: 100%; justify-content: center; padding: 12px;"></button>
+        </div>
+
+    </div>
+    
+</div>
+
+<script>
+// اطلاعات ثابت شرکت
+const companyInfo = {
+    ORG: 'چاپ طلایی راما',
+    SUBTITLE: 'چاپ لیبل پشت چسب دار',
+    ADDRESS: 'شهر قدس، خیابان ساحل، کوچه آیدین، پلاک 4',
+    INSTAGRAM_URL: 'https://instagram.com/print.raman'
+};
+
+// داده‌های فرد (تک مخاطب با چند شماره)
+const contactsData = {
+    yousefRahimi: {
+        N: 'رحیمی;یوسف;;;',
+        FN: 'یوسف رحیمی - چاپ طلایی راما',
+        TITLE: 'مدیریت',
+        // سه شماره موبایل
+        TEL1: '+989126946341',
+        TEL2: '+989032795661',
+        TEL3: '+989354639797',
+        filename: 'YousefRahimi_RamanPrint.vcf'
+    }
+};
+
+// تابع ساخت و دانلود VCF (به‌روزرسانی شده برای پشتیبانی از چند شماره)
+function downloadVcf(personKey) {
+    const data = contactsData[personKey];
+    const company = companyInfo;
+    
+    let vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${data.N}
+FN:${data.FN}
+ORG:${company.ORG};${company.SUBTITLE}`;
+
+    if (data.TITLE) {
+        vcard += `\nTITLE:${data.TITLE}`;
+    }
+
+    // افزودن شماره‌های موبایل (تا 3 عدد)
+    if (data.TEL1) vcard += `\nTEL;TYPE=CELL;TYPE=PREF:${data.TEL1}`;
+    if (data.TEL2) vcard += `\nTEL;TYPE=CELL:${data.TEL2}`;
+    if (data.TEL3) vcard += `\nTEL;TYPE=CELL:${data.TEL3}`;
+
+    // افزودن آدرس (به صورت استاندارد VCF)
+    if (company.ADDRESS) {
+        // فرمت آدرس: ADR;TYPE=WORK:;;Street Address;City;Region;Postal Code;Country
+        // ما همه را در قسمت Street Address می گذاریم چون آدرس فارسی یکپارچه است
+        vcard += `\nADR;TYPE=WORK:;;${company.ADDRESS};;;;`;
+    }
+    
+    // افزودن لینک اینستاگرام به عنوان وبسایت
+    if (company.INSTAGRAM_URL) {
+        vcard += `\nURL;TYPE=INSTAGRAM:${company.INSTAGRAM_URL}`;
+    }
+
+    vcard += `\nEND:VCARD`;
+
+    const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = data.filename;
+    document.body.appendChild(a);
+    a.click();
+    
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+    }, 500);
+}
+
+// گوش دادن به کلیک دکمه ذخیره
+document.querySelector('.save-individual-btn').addEventListener('click', (e) => {
+    const personKey = e.currentTarget.getAttribute('data-person');
+    if (personKey) {
+        downloadVcf(personKey);
+    }
+});
+</script>
+
+</body>
+</html>
