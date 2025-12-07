@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ریما پلاستیک | علیرضا جهان تیغ</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* --- تنظیمات اصلی چپ‌چین (LTR) --- */
+:root {
+    --primary-green: #4CAF50;
+    --dark-green: #2E7D32;
+    --gold: #FFC107;
+    --white: #FFFFFF;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #e8f5e9;
+    --insta-color: #E1306C;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background: var(--bg-light);
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: ltr;
+    text-align: left;
+}
+
+.card{
+    width:92%;
+    max-width:400px;
+    background: var(--white); 
+    border-radius:25px; 
+    padding:30px 25px;
+    box-shadow:0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #c8e6c9;
+    text-align: left;
+}
+
+h1{
+    margin:0 0 5px;
+    font-size:28px;
+    color: var(--dark-green);
+    text-align: center; 
+    font-weight: 900;
+    direction: rtl; 
+} 
+h2{
+    margin:0 0 25px;
+    font-size:16px;
+    color: var(--primary-green);
+    font-weight: 500;
+    text-align: center;
+    direction: rtl; 
+} 
+
+/* بخش لینک‌های شبکه اجتماعی */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    direction: rtl;
+}
+.insta-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background: #fdf2f6;
+    color: var(--insta-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #fad2e1;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+.insta-link:hover {
+    background: var(--insta-color);
+    color: white;
+}
+
+/* بخش اطلاعات فرد */
+.person-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #fcfcfc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+.person-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-dark);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+    text-align: center;
+    direction: rtl;
+    color: var(--dark-green);
+}
+
+.mobile-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    direction: rtl;
+}
+.mobile-line > span {
+    font-size: 14px;
+    color: #666;
+    margin-left: auto;
+}
+.mobile-info {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+}
+
+.mobile-number {
+    font-size: 18px;
+    color: var(--text-dark);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* دکمه اصلی ذخیره */
+#saveContactBtn{
+    margin-top:15px;
+    padding:16px;
+    font-size:17px;
+    border:none;
+    border-radius:12px;
+    background: var(--dark-green);
+    color:var(--text-light);
+    cursor:pointer;
+    width:100%;
+    font-weight: 700;
+    transition:background 0.3s;
+    direction: rtl;
+    font-family:'Vazirmatn', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#saveContactBtn:hover{background:#1b5e20;}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>ریما پلاستیک</h1>
+    <h2>تولید محصولات خانه و آشپزخانه</h2>
+    
+    <div class="social-links">
+        <a href="https://instagram.com/rima.plastic" target="_blank" class="insta-link">
+            <span>rima.plastic</span>
+            <span style="font-size: 20px;">📸</span>
+        </a>
+    </div>
+
+    <div class="person-group">
+        <div class="person-title">
+            علیرضا جهان تیغ
+        </div>
+        
+        <div class="mobile-line">
+            <span>شماره تماس ۱:</span>
+            <div class="mobile-info">
+                <a href="tel:+989193975717" class="mobile-number">0919 397 5717</a>
+            </div>
+        </div>
+
+        <div class="mobile-line">
+            <span>شماره تماس ۲:</span>
+            <div class="mobile-info">
+                <a href="tel:+989024444638" class="mobile-number">0902 444 4638</a>
+            </div>
+        </div>
+    </div>
+    
+    <button id="saveContactBtn" onclick="downloadVcf()">
+        <span>👤</span>
+        ذخیره در مخاطبین
+    </button>
+</div>
+
+<script>
+function downloadVcf() {
+    // اطلاعات مخاطب
+    const contact = {
+        firstName: "علیرضا",
+        lastName: "جهان تیغ",
+        org: "ریما پلاستیک",
+        mobile1: "+989193975717",
+        mobile2: "+989024444638",
+        instagram: "https://instagram.com/rima.plastic",
+        filename: "Alireza_Jahantigh.vcf"
+    };
+
+    // ساخت محتوای VCF استاندارد
+    let vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${contact.lastName};${contact.firstName};;;
+FN:${contact.firstName} ${contact.lastName}
+ORG:${contact.org}
+TEL;TYPE=CELL;TYPE=PREF;TYPE=VOICE:${contact.mobile1}
+TEL;TYPE=CELL;TYPE=VOICE:${contact.mobile2}
+URL;TYPE=INSTAGRAM:${contact.instagram}
+X-SOCIALPROFILE;TYPE=instagram:${contact.instagram}
+END:VCARD`;
+
+    // ایجاد فایل و دانلود
+    const blob = new Blob([vcard], {type: 'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = contact.filename;
+    document.body.appendChild(link);
+    link.click();
+    
+    // پاکسازی حافظه
+    setTimeout(() => {
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }, 1000);
+}
+</script>
+
+</body>
+</html>
